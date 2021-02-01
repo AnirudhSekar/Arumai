@@ -6,9 +6,15 @@ header{
     overflow:hidden;
 }
 header .logo a{
+    position:relative;
+    right: -50px;
     text-decoration: none;
     text-transform:uppercase;
     color:black;
+}
+ul .nav-cart{
+    position: absolute;
+    top: 15px
 }
 header nav{
     display:flex;
