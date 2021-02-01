@@ -5,7 +5,7 @@ import Cart from './svg/shopping-cart-solid.svg'
 import {Link} from 'react-router-dom'
 import './css/Header.css'
 import { DataContext } from './Context';
-
+import {PavBhajiLogo} from './PavBhajiLogo.png'
 
 export class Header extends Component {
     static contextType = DataContext;
@@ -27,7 +27,7 @@ export class Header extends Component {
                     <img src = {Menu} width="20" alt=""/>
                     </div>
                     <div className="logo">
-                        <h1><Link to="/">Pav Bhaji Vada Pav</Link></h1>
+                        <img src = {PavBhajiLogo}/>
                     </div>
                 <nav>
                     <ul className={toggle ? "toggle" : ""}>
