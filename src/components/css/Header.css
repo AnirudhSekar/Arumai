@@ -84,7 +84,8 @@ header .close{
     header ul.toggle{
         top:0;
     }
-    h1{
-        font-size:26px;
+    .logo{
+        position: relative;
+        right:40px;
     }
 }
