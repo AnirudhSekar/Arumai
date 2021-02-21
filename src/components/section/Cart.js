@@ -1,18 +1,18 @@
 import React, {Component} from 'react'
 import {DataContext} from '../Context'
+import {Link} from 'react-router-dom'
 import '../css/Details.css'
 import '../css/Cart.css'
-import { Link } from 'react-router-dom';
-
-export class Cart extends Component{
+class Cart extends Component{
     static contextType = DataContext;
     componentDidMount(){
         this.context.getTotal();
     }
-    render() {
+    render(){
         const {cart, increase, reduction, removeProduct, total} = this.context;
-        var tax = ((total * 8.25)/100);
-        var totalCost = (total+tax).toFixed(2);
+        const tax = ((total * 8.25)/100);
+        localStorage.setItem('totalCost', (total+tax).toFixed(2));
+        const totalDisplayCost = JSON.parse(localStorage.getItem('totalCost'))
         if(cart.length === 0){
             return <h2 style={{textAlign:"center"}}>There are currently no items in cart</h2>
         } else{
@@ -43,17 +43,16 @@ export class Cart extends Component{
                         </div>
                     ))
                 }
-            <div className="total" >
-                <Link to="checkout">Checkout</Link>   
-                <h2 className="subtotal">Subtotal: ${(total).toFixed(2)}</h2>
-                <h2 className="tax">Tax: ${(tax).toFixed(2)}</h2>
-                <br></br>
-                <h2 className="totals">Total: ${totalCost}</h2>
-            </div>
+            <div className="total">
+               <h2 className = "subtotal">Subtotal: ${total.toFixed(2)}</h2> 
+               <h2 className = "tax">Tax: ${tax.toFixed(2)}</h2>
+               <h2 className="totals">Total: ${totalDisplayCost}</h2>
+               <br></br>
+               <Link to = "/checkout">Checkout</Link>
+            </div>            
                 </>
             )
         }
     }
 }
-        
 export default Cart

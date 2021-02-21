@@ -65,7 +65,7 @@ header .close{
         height:100vh;
         display:flex;
         justify-content: space-around;
-        align-items:center;
+        text-align:center;
         flex-direction:column;
         background:white;
         z-index:99;

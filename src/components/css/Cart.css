@@ -46,19 +46,19 @@ section .cart{
     letter-spacing:1px;
 }
 .subtotal{
-    position: relative;
-    bottom:65px;
-    left:44.8%;
+    position: fixed;
+    bottom:225px;
+    right:320px;
     float:right;
 }
 .tax{
-   position: relative;
-   bottom:35px;
-   left:19.5%;
-   float:right;
+    position: fixed;
+    bottom:190px;
+    right: 320px;
 }
 .totals{
-    position: relative;
-    right: 178px;
-    border-top:2px solid lightgray;
+    border-top:gray solid;
+    position:fixed;
+    bottom:150px;
+    right: 320px;
 }
