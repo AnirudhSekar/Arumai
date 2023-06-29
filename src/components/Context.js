@@ -42,7 +42,7 @@ export class DataProvider extends Component{
             })
             this.setState({cart: [...cart, ...data]})
         }else{
-            alert("This item is already in the cart")
+            this.increase(id)
         }
     }
     reduction = id=>{

@@ -16,7 +16,6 @@ export class Products extends Component{
                             <div className="content">
                                 <h3>{product.title}</h3>
                                 <span>${product.price}</span>
-                                <p className="description">{product.description}</p>
                                 <button onClick={() => addCart(product._id)}>Add to Cart</button>
                             </div>
                             

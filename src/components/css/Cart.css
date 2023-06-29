@@ -1,64 +1,63 @@
 section .cart{
-    position: relative;
-    border: 1px transparent;
+  position: relative;
+  border: 1px transparent;
 }
 .amount span{
-    color: gray;
-    padding: 0 20px;
+  color: gray;
+  padding: 0 20px;
+  position:relative;
+  bottom:5px
+  
 }
 .amount .count{
-    width: 40px;
-    height: 30px;
-    border: 1px solid #555;
-    outline: none;
-    background: transparent;
-    cursor: pointer;
+  width: 40px;
+  height: 30px;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  border: none;
 }
 .delete{
-    cursor: pointer;
-    font-weight: 900;
+  cursor: pointer;
+  font-weight: 900;
 }
 .total{
-    color:gray;
-    width: 100%;
-    height: 50px;
-    display:flex;
-    align-items: right;
-    justify-content: space-around;
+  color:gray;
+  width: 100%;
+  height: 50px;
+  display:flex;
+  align-items: right;
+  justify-content: space-around;
 }
 .total a{
-    text-decoration: none;
-    background: #333;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    padding: 10px 25px;
+  text-decoration: none;
+  background: #333;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 10px 25px;
 }
 .total h2{
-    margin-right: 50px;
-    color: gray;
-}
-.count{
-    background:gray;
-    border-radius:15px;
+  margin-right: 50px;
+  color: gray;
 }
 .cart {
-    letter-spacing:1px;
+  letter-spacing:1px;
 }
 .subtotal{
-    position: fixed;
-    bottom:225px;
-    right:320px;
-    float:right;
+  position: fixed;
+  bottom:225px;
+  right:320px;
+  float:right;
 }
 .tax{
-    position: fixed;
-    bottom:190px;
-    right: 320px;
+  position: fixed;
+  bottom:190px;
+  right: 320px;
 }
 .totals{
-    border-top:gray solid;
-    position:fixed;
-    bottom:150px;
-    right: 320px;
+  border-top:gray solid;
+  position:fixed;
+  bottom:150px;
+  right: 320px;
 }

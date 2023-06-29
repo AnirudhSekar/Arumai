@@ -18,9 +18,14 @@ export class Header extends Component {
         this.setState({toggle:!this.state.toggle})
     }
     
+    
     render() {
         const {toggle} = this.state;
         const {cart} = this.context;
+        var sum = 0
+        cart.forEach((product) => {
+            sum += product.count
+        })
         return(
             <header>
                 <div className="menu" onClick={this.menuToggle}>
@@ -33,13 +38,13 @@ export class Header extends Component {
                     <ul className={toggle ? "toggle" : ""}>
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/products">Products</Link></li>
-                        <li><Link to="/additional-info">Additional Information</Link></li>
+                        <li><Link to="/about-us">About Us</Link></li>
                         <li className="close" onClick={this.menuToggle}>
                             <img src={Close} width="20" alt=""/>
                         </li>
                     </ul>           
                     <div className = "nav-cart">
-                        <span>{cart.length}</span>
+                        <span>{sum}</span>
                         <Link to="/cart">
                             <img src ={Cart} alt="" width = "20"/>
                         </Link>

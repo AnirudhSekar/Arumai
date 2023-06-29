@@ -10,7 +10,7 @@ export class Section extends Component {
             <section>
                 <Route path="/" component={Products} exact/>
                 <Route path="/products" component={Products} exact/>
-                <Route path="/additional-info" component={Contact}/> 
+                <Route path="/about-us" component={Contact}/> 
                 <Route path = "/cart" component = {Cart} />
                 <Route path = "/checkout" component = {Checkout} />
             </section>

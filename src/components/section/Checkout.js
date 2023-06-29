@@ -43,10 +43,10 @@ function Checkout() {
       <div style = {{textAlign:"center"}}>
         <h1>Your total is ${totalCost}</h1>
           <PayPalButton
-      createOrder={(data, actions) => createOrder(data, actions)}
-      onApprove={(data, actions) => onApprove(data, actions)}
-      onError = {(err) => onError(err)}
-    /> 
+            createOrder={(data, actions) => createOrder(data, actions)}
+            onApprove={(data, actions) => onApprove(data, actions)}
+            onError = {(err) => onError(err)}
+      ></PayPalButton>
       </div>
   );
 }
