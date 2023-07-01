@@ -1,0 +1,29 @@
+// This is a public sample test API key.
+// Don’t submit any personally identifiable information in requests made with this key.
+// Sign in to see your own test API key embedded in code samples.
+const stripe = require('stripe')('sk_test_51Mu4ZtJo31NhKOMDjMJKPEAfLnAMWWQjyNpCkUNde9mtafy7RLLJ5DgbjuLdICGjQeywZFQZdd0s43RF1kzvWKCw00r4It609v');
+const express = require('express');
+const app = express();
+app.use(express.static('public'));
+
+
+app.post('/create-checkout-session', async (req, res) => {
+  
+
+  const session = await stripe.checkout.sessions.create({
+    line_items: [
+      {
+        // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+        price: 'price_1MueYDJo31NhKOMDYhEtCrQ2',
+        quantity: 1,
+      },
+    ],
+    mode: 'payment',
+    success_url: `http://192.168.1.169:3000/order-success`,
+    cancel_url: `http://192.168.1.169:3000/order-error`,
+  });
+
+  res.redirect(303, session.url);
+});
+
+app.listen(4242, () => console.log('Running on port 4242'));

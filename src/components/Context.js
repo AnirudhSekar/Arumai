@@ -4,18 +4,16 @@ export class DataProvider extends Component{
     state = {
         products:[
             {
-            "_id":"1",
-            "title": "Vada Pav",
+            "_id":"price_1MueYDJo31NhKOMDYhEtCrQ2",
+            "title": "Sambar",
             "src":"https://www.thespruceeats.com/thmb/XDWIAuDFfHo4oNpM5M9dPYsn4nI=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/vadapav-56ac12145f9b58b7d00a409e.jpg",
-            "description":"This is what a Vada Pav looks like",           
-            "price": 3.49,
+            "price": 8.99,
             "count":1 
             },
             {
-                "_id":"2",
-                "title": "Pav Bhaji",
+                "_id":"price_1Mum0EJo31NhKOMDzHjKKC5b",
+                "title": "Masala Dosa",
                 "src":"https://pipingpotcurry.com/wp-content/uploads/2017/04/Pav-Bhaji-Recipe-in-Instant-Pot.-Stovetop.jpg",
-                "description":"This what Pav Bhaji looks like",
                 "price": 8.99,
                 "count":1 
             },
@@ -23,7 +21,6 @@ export class DataProvider extends Component{
                 "_id":"3",
                 "title": "Misal Pav",
                 "src": "https://3.bp.blogspot.com/-M7hTCRmQsbk/XAI2jN4oW0I/AAAAAAAAOjA/wxOm7NtOqWQMTWE5WX-FceX1SI5HSF9YgCLcBGAs/s1600/Misal_Pav_6.jpg",
-                "description":"This is what Misal Pav looks like",
                 "price": 8.99,
                 "count":1 
             }
@@ -58,7 +55,7 @@ export class DataProvider extends Component{
     increase = id=>{
         const {cart} = this.state;
         cart.forEach(item =>{
-            if(item._id === id){
+            if(item._id === id && item.count < 10){
                 item.count +=1;
             }
         })

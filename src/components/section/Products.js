@@ -15,7 +15,7 @@ export class Products extends Component{
                                 <img src={product.src} alt=""/>
                             <div className="content">
                                 <h3>{product.title}</h3>
-                                <span>${product.price}</span>
+                                <span>   ${product.price}</span>
                                 <button onClick={() => addCart(product._id)}>Add to Cart</button>
                             </div>
                             

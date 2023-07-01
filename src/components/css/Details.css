@@ -5,7 +5,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
   }
   section {
-    background: #ffffff;
+    background: #fcfcfc;
     display: flex;
     flex-direction: column;
     width:auto;
@@ -34,8 +34,8 @@ body {
   .product img {
     border-radius: 6px;
     margin: 10px;
-    width: 125px;
-    height: 105px;
+    width: 105px;
+    height: 84px;
   }
   h3,
   h5 {
@@ -46,6 +46,7 @@ body {
     letter-spacing: 0.25px;
     color: black;
     margin-bottom: 15px;
+    padding-left:10px;
   }
   .delete {
     position: relative;
@@ -57,12 +58,12 @@ body {
   }
   .delete button {
     position: absolute;
-    left: 200px;
+    left: 245px;
     bottom:30px;
     height: 36px;
-    background: #556cd6;
+    background: #36373c;
     color: white;
-    width: 200px;
+    width: 100px;
     font-size: 14px;
     border: 0;
     font-weight: 500;
@@ -79,8 +80,32 @@ body {
 .amount {
   position: absolute;
   left: 270px;
-  transform: translateY(-65px);
+  transform: translateY(-70px);
 }
 .product {
   padding:25px
+} 
+
+
+.submit {
+  position: relative;
+  transform: translateY(5px);
+  left:20px;
+  height: 36px;
+  background: #556cd6;
+  color: white;
+  width: 200px;
+  font-size: 14px;
+  border: 0;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 0.6;
+  border-radius: 6px 6px 6px 6px;
+  transition: all 0.2s ease;
+  box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
+}
+
+@media(max-width:650px) {
+
+
 }

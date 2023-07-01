@@ -3,7 +3,7 @@ import Products from './section/Products'
 import {Route} from 'react-router-dom'
 import { Contact } from './section/Contact'
 import Cart from './section/Cart'
-import Checkout from './section/Checkout'
+import Success from './section/Success'
 export class Section extends Component {
     render() {
         return(
@@ -12,7 +12,9 @@ export class Section extends Component {
                 <Route path="/products" component={Products} exact/>
                 <Route path="/about-us" component={Contact}/> 
                 <Route path = "/cart" component = {Cart} />
-                <Route path = "/checkout" component = {Checkout} />
+                <Route path = "/order-success" component = {Success} />
+                <Route path = "/order-error" component = {Error} />
+
             </section>
         )
     }

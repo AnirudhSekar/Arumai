@@ -4,12 +4,25 @@ import "../css/Cart.css"
 import {DataContext} from '../Context'
 import add from "../svg/add.svg"
 import subtract from "../svg/subtraction.png"
-const ProductDisplay = () => {
-  
+import trash from "../svg/trash-bin.svg"
+
+function ProductDisplay(){
+
+  function handleSubmit(cart, total) {
+      console.log(JSON.stringify(cart))
+      console.log(fetch("http://192.168.1.169:4242/create-checkout-session", {
+          method:"POST",
+          mode:"no-cors",
+          body:JSON.stringify(cart)
+      }))
+  }
+
   const value = useContext(DataContext)
   const {cart, increase, reduction, removeProduct, total} = value;
   const tax = ((total * 8.25)/100);
   localStorage.setItem('totalCost', (total+tax).toFixed(2));
+  localStorage.setItem('cart', cart);
+
   const totalDisplayCost = JSON.parse(localStorage.getItem('totalCost'))
   if(cart.length === 0){
     return <h2 style={{textAlign:"center"}}>There are currently no items in cart</h2>
@@ -39,13 +52,15 @@ const ProductDisplay = () => {
          </div>
             <div className="delete" onClick = {() => removeProduct(item._id)}>
               <button className="cart">
-               Remove from Cart
+                <img src = { trash } width={30} height={30} />
               </button>
             </div>
             </div>
         ))
       }
-    
+          <button className="submit" onClick={() => handleSubmit(cart, totalDisplayCost)}>
+            Checkout ${totalDisplayCost.toFixed(2)}
+          </button>
       </>
 )}};
 

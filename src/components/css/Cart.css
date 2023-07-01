@@ -21,14 +21,6 @@ section .cart{
   cursor: pointer;
   font-weight: 900;
 }
-.total{
-  color:gray;
-  width: 100%;
-  height: 50px;
-  display:flex;
-  align-items: right;
-  justify-content: space-around;
-}
 .total a{
   text-decoration: none;
   background: #333;
@@ -43,17 +35,6 @@ section .cart{
 }
 .cart {
   letter-spacing:1px;
-}
-.subtotal{
-  position: fixed;
-  bottom:225px;
-  right:320px;
-  float:right;
-}
-.tax{
-  position: fixed;
-  bottom:190px;
-  right: 320px;
 }
 .totals{
   border-top:gray solid;
