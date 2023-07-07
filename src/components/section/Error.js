@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function Checkout() {
+function Error() {
   
   return (
       <div style = {{textAlign:"center"}}>
@@ -8,4 +8,4 @@ function Checkout() {
       </div>
   );
 }
-export default Checkout
+export default Error

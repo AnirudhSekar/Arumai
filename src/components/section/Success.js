@@ -1,6 +1,6 @@
 import React from "react";
 
-function Checkout() {
+function Success() {
   
   return (
       <div style = {{textAlign:"center"}}>
@@ -8,4 +8,4 @@ function Checkout() {
       </div>
   );
 }
-export default Checkout
+export default Success

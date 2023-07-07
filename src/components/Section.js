@@ -4,6 +4,7 @@ import {Route} from 'react-router-dom'
 import { Contact } from './section/Contact'
 import Cart from './section/Cart'
 import Success from './section/Success'
+import Error from './section/Error'
 export class Section extends Component {
     render() {
         return(

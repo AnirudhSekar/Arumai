@@ -1,26 +1,27 @@
 import React, { Component } from 'react'
+
 export const DataContext = React.createContext();
 export class DataProvider extends Component{
     state = {
         products:[
             {
-            "_id":"price_1MueYDJo31NhKOMDYhEtCrQ2",
+            "_id":"1",
             "title": "Sambar",
-            "src":"https://www.thespruceeats.com/thmb/XDWIAuDFfHo4oNpM5M9dPYsn4nI=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/vadapav-56ac12145f9b58b7d00a409e.jpg",
+            "src":"https://t4.ftcdn.net/jpg/00/53/84/51/240_F_53845173_DcSSmXY3vo6KEBRRMA7IfAkYQLBSIt7M.jpg",
             "price": 8.99,
             "count":1 
             },
             {
-                "_id":"price_1Mum0EJo31NhKOMDzHjKKC5b",
+                "_id":"2",
                 "title": "Masala Dosa",
-                "src":"https://pipingpotcurry.com/wp-content/uploads/2017/04/Pav-Bhaji-Recipe-in-Instant-Pot.-Stovetop.jpg",
+                "src":"https://www.vegrecipesofindia.com/wp-content/uploads/2021/06/masala-dosa-recipe-1.jpg",
                 "price": 8.99,
                 "count":1 
             },
             {
                 "_id":"3",
-                "title": "Misal Pav",
-                "src": "https://3.bp.blogspot.com/-M7hTCRmQsbk/XAI2jN4oW0I/AAAAAAAAOjA/wxOm7NtOqWQMTWE5WX-FceX1SI5HSF9YgCLcBGAs/s1600/Misal_Pav_6.jpg",
+                "title": "Idli",
+                "src": "https://shwetainthekitchen.com/wp-content/uploads/2022/01/Idli.jpg",
                 "price": 8.99,
                 "count":1 
             }
@@ -29,17 +30,21 @@ export class DataProvider extends Component{
         total:0        
     };
     addCart = (id)=>{
-        const {products, cart} = this.state;
+        const {products, cart, total} = this.state;
         const check = cart.every(item=>{
             return item._id !== id;
         })
+        const data = products.filter(product => {
+            return product._id === id
+        })
         if(check){
-            const data = products.filter(product => {
-                return product._id === id
-            })
-            this.setState({cart: [...cart, ...data]})
+           
+            this.setState({cart: [...cart, ...data], total: ((Number(total)+data[0].price).toFixed(2))})
+            alert(data[0].title + " has been added to the cart")
         }else{
             this.increase(id)
+            alert(data[0].title + " has been added to the cart")
+
         }
     }
     reduction = id=>{
@@ -55,7 +60,7 @@ export class DataProvider extends Component{
     increase = id=>{
         const {cart} = this.state;
         cart.forEach(item =>{
-            if(item._id === id && item.count < 10){
+            if(item._id === id){
                 item.count +=1;
             }
         })
@@ -85,6 +90,7 @@ export class DataProvider extends Component{
 
     };
     componentDidMount(){
+        
         const dataCart = JSON.parse(localStorage.getItem('dataCart'));
         if(dataCart !== null){
             this.setState({cart: dataCart});

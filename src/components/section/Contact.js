@@ -6,7 +6,7 @@ export class Contact extends Component{
         return(
             <div>
                 <h1>About Us</h1>
-                <p>Arumai is a pure-veg indian restaurant with many delicious food options. Our food spans multiple cuisines within indian including both North Indian and South Indian. Feel free to try our excellent food <Link to='/'><div id = "link">here</div></Link>
+                <p>Arumai is a pure-veg indian restaurant with many delicious food options. Our food spans multiple cuisines within indian including both North Indian and South Indian. Feel free to try our excellent food<Link to='/'><div id = "link"> here</div></Link>
                 </p>
             </div>
         )

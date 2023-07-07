@@ -9,7 +9,6 @@ app.use(express.static('public'));
 
 app.post('/create-checkout-session', async (req, res) => {
   
-
   const session = await stripe.checkout.sessions.create({
     line_items: [
       {
@@ -23,7 +22,7 @@ app.post('/create-checkout-session', async (req, res) => {
     cancel_url: `http://192.168.1.169:3000/order-error`,
   });
 
-  res.redirect(303, session.url);
+  res.redirect(301, session.url);
 });
 
 app.listen(4242, () => console.log('Running on port 4242'));
