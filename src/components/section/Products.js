@@ -7,6 +7,7 @@ export class Products extends Component{
 
     render(){
         const {products, addCart} = this.context;
+        localStorage.setItem('paid', 'false')
         return(
             <div id="product">
                 {

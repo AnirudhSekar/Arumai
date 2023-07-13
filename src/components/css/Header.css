@@ -7,10 +7,12 @@ header{
 }
 header .logo a{
     position:relative;
-    right: -50px;
+    right: -40px;
+    top:5px;
     text-decoration: none;
     text-transform:uppercase;
     color:black;
+
 }
 ul .nav-cart{
     position: absolute;

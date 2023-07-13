@@ -5,29 +5,35 @@ import {DataContext} from '../Context'
 import add from "../svg/add.svg"
 import subtract from "../svg/subtraction.png"
 import trash from "../svg/trash-bin.svg"
-
+import axios from "axios";
 function ProductDisplay(){
 
-   function handleSubmit(cart) {
-      const response = fetch('http://192.168.1.169:4242/create-checkout-session', {
-        method:"POST",
-        mode:"no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(cart),
-        redirect:'follow'
-      }).then((response) => {
-          
-        console.log(response.url)
-
-      })
-
-      
-  }
   const value = useContext(DataContext)
   const {cart, increase, reduction, removeProduct, total} = value;
   const tax = ((total * 8.25)/100);
   localStorage.setItem('totalCost', ((Number(total)+Number(tax)).toFixed(2)));
   const totalDisplayCost = JSON.parse(localStorage.getItem('totalCost'))
+  localStorage.setItem('paid', 'false')
+
+  const cart_object = {
+    cart:cart,
+    total: total
+  }
+
+
+  function handleSubmit(event) {
+    event.preventDefault()
+    axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+    axios.post('http://localhost:4242/create-checkout-session', cart_object)
+    .then(response => {
+      console.log(response);
+      window.location.assign(response.data)
+  })
+    .catch(error => console.error(error))
+  }
+
+
+
   if(cart.length === 0){
     return <h2 style={{textAlign:"center"}}>There are currently no items in cart</h2>
   } else{
@@ -60,11 +66,10 @@ function ProductDisplay(){
               </button>
             </div>
             </div>
-        ))
-      }
-        
-        <button className="submit" onClick={() => handleSubmit(cart)}>Checkout: ${totalDisplayCost.toFixed(2)}</button>
+        ))}
+        <button className="submit" onClick={handleSubmit}>Checkout: ${Number(total).toFixed(2)}</button>
       </>
+        
 )}};
 
 const Message = ({ message }) => (

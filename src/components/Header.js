@@ -5,7 +5,7 @@ import Cart from './svg/shopping-cart-solid.svg'
 import {Link} from 'react-router-dom'
 import './css/Header.css'
 import { DataContext } from './Context';
-
+import logo from '../logo.png'
 
 export class Header extends Component {
     static contextType = DataContext;
@@ -32,7 +32,7 @@ export class Header extends Component {
                     <img src = {Menu} width="20" alt=""/>
                     </div>
                     <div className="logo">
-                        <h1><Link to="/"><img src = "https://logos.textgiraffe.com/logos/logo-name/22420010-designstyle-balance-l.png" alt = ""/></Link></h1>
+                        <h1><Link to="/"><img src = {logo} height='82px' width='85px' alt = "" className='logo'/></Link></h1>
                     </div>
                 <nav>
                     <ul className={toggle ? "toggle" : ""}>
