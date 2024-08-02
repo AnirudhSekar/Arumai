@@ -33,7 +33,7 @@ app.post('/create-checkout-session', async (req, res) => {
   });
   console.log(session);
   res.url = session.url
-  app.use(cors({origin:'http://localhost:4242/'}))
+  app.use(cors({origin:'http://192.168.1.169:4242/'}))
   url = res.url
   return res.json(res.url)
 });
