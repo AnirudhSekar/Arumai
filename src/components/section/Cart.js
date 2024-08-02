@@ -12,7 +12,6 @@ function ProductDisplay(){
   const {cart, increase, reduction, removeProduct, total} = value;
   const tax = ((total * 8.25)/100);
   localStorage.setItem('totalCost', ((Number(total)+Number(tax)).toFixed(2)));
-  const totalDisplayCost = JSON.parse(localStorage.getItem('totalCost'))
   localStorage.setItem('paid', 'false')
 
   const cart_object = {
