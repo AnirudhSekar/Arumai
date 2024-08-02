@@ -1,7 +1,7 @@
 // This is a public sample test API key.
 // Don’t submit any personally identifiable information in requests made with this key.
 // Sign in to see your own test API key embedded in code samples.
-const stripe = require('stripe')('API KEY');
+const stripe = require('stripe')('sk_test_51Mu4ZtJo31NhKOMDjMJKPEAfLnAMWWQjyNpCkUNde9mtafy7RLLJ5DgbjuLdICGjQeywZFQZdd0s43RF1kzvWKCw00r4It609v');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser')
