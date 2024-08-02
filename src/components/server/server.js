@@ -28,12 +28,12 @@ app.post('/create-checkout-session', async (req, res) => {
     
     line_items: line_items,
     mode: 'payment',
-    success_url: `http://localhost:3000/order-success`,
-    cancel_url: `http://localhost:3000/order-error`,
+    success_url: `http://arumai.netlify.app/order-success`,
+    cancel_url: `http://arumai.netlify.app/order-error`,
   });
   console.log(session);
   res.url = session.url
-  app.use(cors({origin:'http://localhost:4242/'}))
+  app.use(cors({origin:'http://192.168.1.169:4242/'}))
   url = res.url
   return res.json(res.url)
 });
