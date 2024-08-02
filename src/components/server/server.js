@@ -1,7 +1,7 @@
 // This is a public sample test API key.
 // Don’t submit any personally identifiable information in requests made with this key.
 // Sign in to see your own test API key embedded in code samples.
-const stripe = require('stripe')('sk_test_51Mu4ZtJo31NhKOMDjMJKPEAfLnAMWWQjyNpCkUNde9mtafy7RLLJ5DgbjuLdICGjQeywZFQZdd0s43RF1kzvWKCw00r4It609v');
+const stripe = require('stripe')('API KEY');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser')
@@ -33,7 +33,7 @@ app.post('/create-checkout-session', async (req, res) => {
   });
   console.log(session);
   res.url = session.url
-  app.use(cors({origin:'http://192.168.1.169:4242/'}))
+  app.use(cors({origin:'http://localhost:4242/'}))
   url = res.url
   return res.json(res.url)
 });
