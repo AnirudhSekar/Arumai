@@ -78,7 +78,7 @@ const Message = ({ message }) => (
   </section>
 );
 
-export default function App() {
+export default function Cart() {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
