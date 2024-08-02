@@ -13,3 +13,5 @@ npm start
 cd Arumai
 npm start
 ```
+# Before getting started:
+Make sure to update API keys accordingly. Unfortunately due to issues with security, the payment functionality is not working temporarily, but we are working on it becoming hosted eventually on AWS or GCP
