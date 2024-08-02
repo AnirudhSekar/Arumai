@@ -53,16 +53,16 @@ function ProductDisplay(){
           </div>
           <div className="amount">
               <button className="count" onClick={() => reduction(item._id)}>
-                <img src={subtract} width={20} height={21.5}></img>
+                <img src={subtract} width={20} height={21.5} alt=""></img>
               </button>
                   <span>{item.count}</span>
               <button className="count" onClick={() =>increase(item._id)}>
-                  <img src={add} height={20} width={20} />
+                  <img src={add} height={20} width={20} alt=""/>
               </button>
          </div>
             <div className="delete" onClick = {() => removeProduct(item._id)}>
               <button className="cart">
-                <img src = { trash } width={30} height={30} />
+                <img src = { trash } width={30} height={30} alt=""/>
               </button>
             </div>
             </div>
