@@ -43,7 +43,7 @@ function ProductDisplay(){
           <div className="all_prods">
           <div className="product">
             <img
-              src={item.src}
+              src={item.src} alt=""
             />
             <div className="description">
             <h3>{item.title}</h3>
