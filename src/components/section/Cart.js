@@ -23,7 +23,7 @@ function ProductDisplay(){
   function handleSubmit(event) {
     event.preventDefault()
     axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
-    axios.post('http://192.168.1.169:4242/create-checkout-session', cart_object)
+    axios.post('http://localhost:4242/create-checkout-session', cart_object)
     .then(response => {
       console.log(response);
       window.location.assign(response.data)
