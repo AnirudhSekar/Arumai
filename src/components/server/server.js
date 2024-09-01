@@ -28,8 +28,8 @@ app.post('/create-checkout-session', async (req, res) => {
     
     line_items: line_items,
     mode: 'payment',
-    success_url: `https://arumai.netlify.app/order-success`,
-    cancel_url: `https://arumai.netlify.app/order-error`,
+    success_url: `http://localhost:4242/order-success`,
+    cancel_url: `http://localhost:4242/order-error`,
   });
   console.log(session);
   res.url = session.url
